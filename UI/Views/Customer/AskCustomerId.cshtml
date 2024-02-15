@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Ask Customer ID";//ViewBag.Title property to "Ask Customer ID" and specifying the layout for the view
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Update with your layout
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2>Enter Customer ID</h2>
+            @*This Razor syntax is used to declare an HTML form. The form is set to submit to the "DisplayQuestionsByCustomerId"
+        action in the "Customer" controller using the HTTP POST method.*@
+            @using (Html.BeginForm("DisplayQuestionsByCustomerId", "Customer", FormMethod.Post))
+            {
+                <div class="form-group">
+                    <label for="customerId">Customer ID:</label>
+                    <input type="number" name="customerId" class="form-control" required />
+                </div>
+
+                <div class="form-group text-center">
+                    <input type="submit" value="Submit" class="btn btn-primary" />
+                </div>
+            }
+        </div>  @*often used to group together and structure content on a web page*@
+    </div>
+</div>
+
+
+
